@@ -1,0 +1,10 @@
+LIBRARY gev_shared
+EXPORTS
+    MineGetEnvironmentVariableA
+    MineGetEnvironmentVariableW
+    MineGetEnvironmentStringsW
+    MineSHGetKnownFolderPath
+    MineExpandEnvironmentStringsA
+    MineExpandEnvironmentStringsW
+    MineSHGetFolderPathA
+    MineSHGetFolderPathW
