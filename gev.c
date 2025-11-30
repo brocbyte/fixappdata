@@ -4,7 +4,6 @@
 #include <Shlobj_core.h>
 #include <detours.h>
 
-
 #include <wchar.h>
 #include <wctype.h>
 

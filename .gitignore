@@ -1,2 +1,7 @@
-Detours/
 patch.bat
+*.exe
+*.exe~
+*.obj
+*.dll
+*.exp
+*.lib
