@@ -4,6 +4,8 @@ This is a command line utility for Windows that allows you to somewhat change th
 
 ## Build
 
+git clone --recurse-submodules https://github.com/brocbyte/fixappdata.git
+
 Open a Developer Command Prompt for VS. To target x64, choose the "X64 Native Tools Command Prompt for VS".
 
 Change directory to the directory with your git repo. To build the library and an example target 'driver', type "nmake".
