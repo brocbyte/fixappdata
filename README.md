@@ -17,12 +17,12 @@ To build the utility itself and a sample target 'driver': `nmake`
 
 ## Usage
 
-patch.bat is used to set the appdata-related folders for the specific application. It can be called like that:
+`patch.bat` is used to set the appdata-related folders for the specific application. It can be called like that:
 
-patch.bat "C:\\newappdata" "C:\\newlocalappdata" "C:\\target_app.exe"
+`patch.bat "C:\\newappdata" "C:\\newlocalappdata" "C:\\target_app.exe"`
 
-This command will patch the target_app.exe application (and save the old version as "~target_app.exe").
-The gev_shared.dll library will be copied into the folder containing target application.
+This command will patch the `target_app.exe` application (and save the old version as `~target_app.exe`).
+The `gev_shared.dll` library will be copied into the folder containing target application.
 
 ## Details
 
@@ -32,11 +32,11 @@ The hard part (dll function hooking) is done by absolutely amazing Detours libra
 
 There are several calls that are usually used for retrieving APPDATA/LOCALAPPDATA:
 
-- GetEnvironmentStringsW
-- GetEnvironmentVariableW/GetEnvironmentVariableA
-- ExpandEnvironmentStringsW/ExpandEnvironmentStringsA
-- SHGetKnownFolderPath
-- SHGetFolderPathW/SHGetFolderPathA
+- `GetEnvironmentStringsW`
+- `GetEnvironmentVariableW`/`GetEnvironmentVariableA`
+- `ExpandEnvironmentStringsW`/`ExpandEnvironmentStringsA`
+- `SHGetKnownFolderPath`
+- `SHGetFolderPathW`/`SHGetFolderPathA`
 - ... and multiple other quirks, cause WinAPI is _vintage_
 
 This application overrides ^^ them with its own implementation, which handles APPDATA-related stuff specifically while passing all irrelevant calls into the original functions.
