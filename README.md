@@ -2,6 +2,12 @@
 
 This is a command line utility for Windows that allows you to somewhat change the APPDATA/LOCALAPPDATA folder of a target application (usually C:/Users/username/AppData/Roaming and C:/Users/username/AppData/Local).
 
+## Build
+
+Open a Developer Command Prompt for VS. To target x64, choose the "X64 Native Tools Command Prompt for VS".
+
+Change directory to the directory with your git repo. To build the library and an example target 'driver', type "nmake".
+
 ## Details
 
 It works by partially overriding the behaviour of the Win32 API functions related to environment variables / folders.
