@@ -1,14 +1,28 @@
 ## Description
 
-This is a command line utility for Windows that allows you to somewhat change the APPDATA/LOCALAPPDATA folder of a target application (usually C:/Users/username/AppData/Roaming and C:/Users/username/AppData/Local).
+This is a command line utility for Windows that allows to somewhat change the APPDATA/LOCALAPPDATA folder of a target application.
+
+Usually %APPDATA% is pointing to C:/Users/username/AppData/Roaming
+and %LOCALAPPDATA% is pointing to C:/Users/username/AppData/Local
+
+This utility allows you to redirect these.
 
 ## Build
 
-git clone --recurse-submodules https://github.com/brocbyte/fixappdata.git
-
 Open a Developer Command Prompt for VS. To target x64, choose the "X64 Native Tools Command Prompt for VS".
 
-Change directory to the directory with your git repo. To build the library and an example target 'driver', type "nmake".
+Run `git clone --recurse-submodules https://github.com/brocbyte/fixappdata.git && cd fixappdata`
+
+To build the utility itself and a sample target 'driver': `nmake`
+
+## Usage
+
+patch.bat is used to set the appdata-related folders for the specific application. It can be called like that:
+
+patch.bat "C:\\newappdata" "C:\\newlocalappdata" "C:\\target_app.exe"
+
+This command will patch the target_app.exe application (and save the old version as "~target_app.exe").
+The gev_shared.dll library will be copied into the folder containing target application.
 
 ## Details
 
